@@ -1,0 +1,29 @@
+name: Update last_run.md every hour
+
+on:
+  schedule:
+    - cron: '0 * * * *'  # Every hour on the hour
+  workflow_dispatch:  # Optional: allow manual runs
+
+jobs:
+  update-last-run:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repo
+      uses: actions/checkout@v4
+
+    - name: Set current time
+      run: |
+        mkdir -p active
+        echo "Last run: $(date -u +"%Y-%m-%d %H:%M:%S UTC")" > active/last_run.md
+
+    - name: Commit and push changes
+      run: |
+        git config user.name "github-actions[bot]"
+        git config user.email "github-actions[bot]@users.noreply.github.com"
+        git add active/last_run.md
+        git commit -m "Update last_run.md [ci skip]" || echo "No changes to commit"
+        git push
+      env:
+        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
