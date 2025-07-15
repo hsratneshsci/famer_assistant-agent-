@@ -139,7 +139,7 @@ Intent Parser (NLP) ↔ Knowledge Graph / AI
 
 | Name             | Role                        |
 | ---------------- | --------------------------- |
-| **Sarayanayn**   | AI/NLP Developer            |
+| **Saranyan**   | AI/NLP Developer            |
 | **Aburoobha**    | Backend Developer           |
 | **Tharun Kumar** | Frontend Engineer           |
 | **Ratnesh**      | Research & Product Strategy |
