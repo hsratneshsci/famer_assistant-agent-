@@ -1,0 +1,10 @@
+{
+  "tomato yellow leaves": {
+    "answer": "Likely nitrogen deficiency or overwatering. Check soil pH.",
+    "followups": ["How old are the plants?", "Do leaves have any spots?"]
+  },
+  "banana plant disease": {
+    "answer": "Possible Panama disease. Remove infected plants immediately.",
+    "followups": ["Any wilting visible?", "What's the soil condition?"]
+  }
+}

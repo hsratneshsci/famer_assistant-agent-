@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>📷 Fast Upload</title>
+</head>
+<body style="text-align:center; font-family:sans-serif; padding:2rem;">
+  <h2>📸 Capture, Compress & Upload</h2>
+
+  <input type="file" id="photoInput" accept="image/*" capture="environment"><br><br>
+  <button onclick="upload()">📤 Upload</button>
+
+  <p id="status" style="margin-top: 1rem;"></p>
+
+  <script>
+    async function upload() {
+      const input = document.getElementById('photoInput');
+      const file = input.files[0];
+
+      if (!file) {
+        document.getElementById('status').textContent = "❌ No file selected.";
+        return;
+      }
+
+      const img = new Image();
+      img.src = URL.createObjectURL(file);
+
+      img.onload = async () => {
+        const canvas = document.createElement('canvas');
+        const MAX_WIDTH = 800;
+        const scale = MAX_WIDTH / img.width;
+        canvas.width = MAX_WIDTH;
+        canvas.height = img.height * scale;
+
+        const ctx = canvas.getContext('2d');
+        ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+
+        canvas.toBlob(async (blob) => {
+          const formData = new FormData();
+          formData.append('photo', blob, 'scan.jpg'); // <- 🔥 important
+
+          const res = await fetch("/", {
+            method: "POST",
+            body: formData
+          });
+
+          if (res.ok) {
+            document.getElementById('status').textContent = "✅ Uploaded!";
+            window.location.href = "/success";
+          } else {
+            document.getElementById('status').textContent = "❌ Upload failed.";
+          }
+        }, 'image/jpeg', 0.7);
+      };
+    }
+  </script>
+</body>
+</html>

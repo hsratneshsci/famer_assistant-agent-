@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Login | Farmer Assistant</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-green-100 flex items-center justify-center min-h-screen">
+  <form method="POST" class="bg-white p-6 rounded shadow max-w-sm w-full">
+    <h2 class="text-xl font-bold mb-4 text-center">🌱 Farmer Assistant Login</h2>
+
+    <label class="block mb-2">
+      <span class="text-gray-700">Name</span>
+      <input type="text" name="username" class="mt-1 block w-full border p-2 rounded" required>
+    </label>
+
+    <label class="block mb-4">
+      <span class="text-gray-700">OTP</span>
+      <input type="text" name="otp" class="mt-1 block w-full border p-2 rounded" required>
+    </label>
+
+    <button type="submit" class="bg-green-600 text-white w-full py-2 rounded hover:bg-green-700">
+      Login
+    </button>
+  </form>
+</body>
+</html>
