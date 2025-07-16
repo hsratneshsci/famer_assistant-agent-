@@ -139,7 +139,7 @@ Intent Parser (NLP) ↔ Knowledge Graph / AI
 
 | Name             | Role                        |
 | ---------------- | --------------------------- |
-| **Sarayanayn**   | AI/NLP Developer            |
+| **Saranyan**   | AI/NLP Developer            |
 | **Aburoobha**    | Backend Developer           |
 | **Tharun Kumar** | Frontend Engineer           |
 | **Ratnesh**      | Research & Product Strategy |
@@ -156,6 +156,5 @@ This project is licensed under the [MIT License](./LICENSE).
 
 > We’d love to hear from you!
 
-* 📧 Email: \[Add your contact emails]
-* 🌐 GitHub: \[Your GitHub Org or Profiles]
+* 📧 Email: contact@strylonstudios.com 
 * 🌱 Connect with us to scale this for real-world farmers!
